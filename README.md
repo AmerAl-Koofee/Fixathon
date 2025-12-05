@@ -42,6 +42,8 @@ Used for:
 Building an “Energy pressure” chart or tile.
 Comparing against Nord Pool elec_price_yoy to show link from wholesale prices → consumer prices.
 Feature in the model if you want to separate energy vs non-energy.
+
+
 2️⃣ mi_wages.csv – Wage pressure / cost-push inflation
 Columns
 date
@@ -63,6 +65,8 @@ Used for:
 “Wage pressure index” tile: is wage growth normal, low, or high vs history / target-consistent level.
 Feature in your model for predicting cpi_yoy (especially non-energy inflation).
 Explaining Riksbank scenarios (Riksbanken often talks about wages needing to stay below some level).
+
+
 3️⃣ ki_price_plans.csv – Firms’ price plans (early warning)
 Columns
 date
@@ -100,6 +104,8 @@ Used for:
 Comparing with actual cpi_yoy (to see whether expectations are above or below current inflation).
 Model feature: expectations sometimes help forecast future CPI, especially for services and wages via wage bargaining.
 Dashboard chart: “Expected vs actual inflation”, plus a text explanation from the LLM.
+
+
 5️⃣ nordpool_electricity_monthly.csv – Energy shock / real-time signal
 Columns
 date
@@ -143,6 +149,8 @@ Used for:
 Early-warning: spikes here usually lead CPI energy inflation (cpi_energy_yoy).
 Model feature: helps explain short-term moves in CPI.
 LLM explanations: “Electricity prices are X% higher than a year ago, signalling strong energy inflation pressure.”
+
+
 6️⃣ Big picture – how the pieces fit together
 Putting it all together:
 SCB (scb_cpif_components.csv)
@@ -161,4 +169,3 @@ Structural cost pressure (wages)
 Forward-looking behavior (price plans, expectations)
 Real-time shocks (electricity)
 → Early-warning and short-term forecast of Swedish inflation.
-If you want, next I can help you design the merged features_merged.csv schema and a script that joins all these by date (handling the quarterly KI data), so you have one clean file ready for modeling and plotting.
